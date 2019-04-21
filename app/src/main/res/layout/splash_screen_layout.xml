@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="text"
+            type="java.lang.String" />
+
+        <variable
+            name="showNoInternet"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="showProgressBar"
+            type="java.lang.Boolean" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Grab News"
+            android:textColor="#008578"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+
+        <ImageView
+            android:id="@+id/iv_no_internet"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/ic_no_internet"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tv_bottom_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:visibleGone="@{showNoInternet}" />
+
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="160dp"
+            android:layout_height="6dp"
+            android:layout_marginBottom="20dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:progressTint="#239895"
+            app:layout_constraintBottom_toTopOf="@id/tv_bottom_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:visibleGone="@{showProgressBar}" />
+
+        <TextView
+            android:id="@+id/tv_bottom_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@{text}"
+            android:textColor="#4a4a4a"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

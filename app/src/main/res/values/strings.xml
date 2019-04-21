@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GrabNews</string>
+    <string name="select_country_title">Select Country</string>
+    <string name="top_headlines">Top Headlines</string>
+</resources>

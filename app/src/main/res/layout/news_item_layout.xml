@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.bitfault.grabnews.screen.topHeadlines.NewsItemViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClickListener="@{() -> model.onItemClicked()}"
+        android:paddingBottom="12dp">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/start_margin_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/top_margin_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="12dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/end_margin_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <View
+            android:id="@+id/top_separator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#eeeeee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_source_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/news_item_source_bg"
+            android:fontFamily="sans-serif-condensed-light"
+            android:gravity="center"
+            android:text="@{model.sourceIcon}"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/start_margin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_separator"
+            tools:text="P" />
+
+        <TextView
+            android:id="@+id/tv_source_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="@{model.sourceText}"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/end_margin_guideline"
+            app:layout_constraintStart_toEndOf="@id/tv_source_icon"
+            app:layout_constraintTop_toBottomOf="@id/top_separator"
+            tools:text="Phys.org" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{model.title}"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/end_margin_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_margin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_source_name"
+            tools:text="Thermodynamic magic enables cooling without energy consumption - Phys.Org" />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="6dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            app:imageUrl="@{model.imageUrl}"
+            app:layout_constraintEnd_toEndOf="@id/end_margin_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_margin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
