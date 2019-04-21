@@ -1,12 +1,6 @@
 # grabnews
 Demo news application using newsapi.org services
 
-Screenshots
-![Splash Screen](https://drive.google.com/file/d/1X2AslMxPxTBNQAsfYvobTQCj1hXqtaFv/view?usp=sharing)
-![Country Selection](https://drive.google.com/file/d/1VwvBACIFH_QuIlCRiScuH3zuuF1szjb3/view?usp=sharing)
-![Top Headlines](https://drive.google.com/file/d/1FH34Gkc012upy_G2uvpxxq8cxfCixtbH/view?usp=sharing)
-![News Webview](https://drive.google.com/file/d/16u_aKsW_qx2AVxUBHXQuuUd4KAk4_hGV/view?usp=sharing)
-
 Download apk : https://drive.google.com/file/d/17-AIYLY1AQ1V8RQToZ6KG4XHM3QNzq8_/view?usp=sharing
 
 Some points about implementation :-
